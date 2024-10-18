@@ -3,6 +3,8 @@
 - Kontakt: [uros.sergas@upr.si]
 - Class repo: [secret.famnit](https://osebje.famnit.upr.si/~uros.sergas/OPB/)
 
+[stvari](https://osebje.famnit.upr.si/~uros.sergas/OPB/SLO/) 
+
 ## Ocenjevanje
 
 | tip | vrednost |

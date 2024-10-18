@@ -32,7 +32,7 @@ Naredi unijo podanih stolpcev.
     SELECT stolpec2
     FROM table2
 
-## Where
+## Where in Having
 
 *Izberi* tole, *kjer* je tole.
 
@@ -41,6 +41,10 @@ Naredi unijo podanih stolpcev.
     
 Kot [filter] v R.ju. Logični operatorji so generični (`<, >, >=, <=, ...`).
 Enakost dobiš s `IS`, neenakost z `IS NOT`.
+
+Razlika med `WHERE` in `HAVING` je to, da WHERE izbira input vrstice pred 
+GROUP BY, na katerih bodo izvedene aggregate funkcije, medtem ko HAVING 
+dela z izbranimi vrsticami.
 
 `AND` veriži pogoje:
 

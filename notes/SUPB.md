@@ -71,3 +71,4 @@ datoteke in indekse.
 3. **Zunanja shema (pogled)**:
     - Predmet_info (vpisani na predmet)
 
+> Relacija je matematični izraz za tabelo.
