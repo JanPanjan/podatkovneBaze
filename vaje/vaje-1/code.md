@@ -1,6 +1,6 @@
 Pridobite vse informacije iz tabele facilities 
 
-```
+```sql
 SELECT * FROM facilities;
 ```
 
@@ -12,7 +12,7 @@ SELECT name, membercost FROM facilities;
 
 Izpišite seznam vseh objektov, ki članom zaračunajo članarino. 
 
-```
+```sql
 SELECT name FROM facilities 
 WHERE membercost > 0;
 ```
@@ -21,17 +21,18 @@ Prikažite seznam vseh objektov, ki članom zaračunajo članarino, in
 ta članarina znaša manj kot 1/50 mesečnih stroškov vzdrževanja. 
 Izpiše naj se facid, ime objekta, cena članarine in mesečno vzdrževanje objektov.
 
-```
+```sql
 SELECT facid, name, membercost, monthlymaintenance 
 FROM facilities
 WHERE membercost > 0 AND (membercost < monthlymaintenance/50);
+WHERE membercost > (1 OR 2) 
 ```
 
 Izpišite seznam vseh objektov z besedo "Tennis" v njihovem imenu.
 
 > '%' je regex, ki pomeni '*', LIKE je uporabljen za matchanje strings.
 
-```
+```sql
 SELECT name FROM facilities 
 WHERE name LIKE '%Tennis%'
 ```
@@ -40,7 +41,7 @@ Pridobite podrobnosti o objektih z ID 1 in 5, brez da bi uporabili operator OR.
 
 > IN je kot LIKE, samo za integerje. Ne izbere od 1 do 5, ampak samo 1 ali 5.
 
-```
+```sql
 SELECT * FROM facilities
 WHERE facid IN (1,5);
 ```
@@ -51,7 +52,7 @@ Izpišite memid, priimek (surname), ime (firstname), in datum pridružitve (join
 > Datumi se obnašajo kot številke in string ids, pač so svoj tip,
 > ampak still
 
-```
+```sql
 SELECT memid, surname, firstname, joindate 
 FROM members
 WHERE joindate > '2012-09-01';
@@ -63,7 +64,7 @@ vsebovati duplikatov.
 > DISTINCT izbere unikatne vrstice kot input.
 > LIMIT je kot head().
 
-```
+```sql
 SELECT DISTINCT surname FROM members
 ORDER BY surname
 LIMIT 10;
@@ -73,7 +74,7 @@ Vrnite kombiniran seznam vseh priimkov in vseh imen objektov.
 
 > UNION združi dva stolpca v enega. Pazi, da daš obema enako ime.
 
-```
+```sql
 SELECT name AS combined
 FROM facilities
 UNION
@@ -83,7 +84,7 @@ FROM members;
 
 Pridobite datum prijave vašega zadnjega člana.
 
-```
+```sql
 SELECT max(joindate) FROM members;
 ```
 
@@ -202,3 +203,11 @@ ORDER BY total_slots DESC
 LIMIT 1;
 ```
 
+
+```language
+
+SELECT b.starttime, b.facid
+FROM bookings b
+WHERE b.facid IN (0,1)
+AND cast(b.starttime AS time) LIKE '2012-09-21%'
+```

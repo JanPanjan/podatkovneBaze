@@ -2,8 +2,7 @@
 
 - Kontakt: [uros.sergas@upr.si]
 - Class repo: [secret.famnit](https://osebje.famnit.upr.si/~uros.sergas/OPB/)
-
-[stvari](https://osebje.famnit.upr.si/~uros.sergas/OPB/SLO/) 
+- Server: [phpPgAdmin](https://www.student.famnit.upr.si/phppgadmin/redirect.php) 
 
 ## Ocenjevanje
 
